@@ -21,7 +21,21 @@ public class Login extends Janela {
         this.label.add(botaoLogRest);
         label.setVisible(true);
 
-        JButton
+        JButton botaoLogCli = new JButton("");
+        botaoLogCli.setBounds(138,350, 359,66);
+        botaoLogCli.setContentAreaFilled(false);
+        botaoLogCli.setBorderPainted(false);
+        botaoLogCli.setVisible(true);
+        this.label.add(botaoLogCli);
+        label.setVisible(true);
+
+        JButton botaoCad = new JButton("");
+        botaoCad.setBounds(266,425, 103,30);
+        botaoCad.setContentAreaFilled(false);
+        botaoCad.setBorderPainted(false);
+        botaoCad.setVisible(true);
+        this.label.add(botaoCad);
+        label.setVisible(true);
 
     }
 }

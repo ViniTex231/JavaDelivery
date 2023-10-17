@@ -2,6 +2,9 @@ package application;
 
 import entities.*;
 import entities.screens.Login;
+import entities.screens.CadRestaurante;
+import entities.screens.CadCliente;
+import entities.screens.Cadastro;
 
 import javax.swing.*;
 import java.util.Objects;
@@ -30,7 +33,20 @@ public class Main {
 //        pedido.imprimirPedido();
 
 
-        Login login;
-        login = new Login("Login", new ImageIcon(Objects.requireNonNull(Main.class.getResource("../Image/Login.png"))));
+//        Login login;
+//        login = new Login("Login", new ImageIcon(Objects.requireNonNull(Main.class.getResource("../Image/Login.png"))));
+
+//        CadRestaurante cadRestaurante;
+//        cadRestaurante = new CadRestaurante("Cadastrar Restaurante", new ImageIcon(Objects.requireNonNull(Main.class.getResource("../Image/cadRest.png"))));
+
+        CadCliente cadCliente;
+        cadCliente = new CadCliente("Cadastrar Cliente", new ImageIcon(Objects.requireNonNull(Main.class.getResource("../Image/cadCliente.png"))));
+
+//        Cadastro cadastro;
+//        cadastro = new Cadastro("Cadastro", new ImageIcon(Objects.requireNonNull(Main.class.getResource("../Image/Cadastro.png"))));
+
+
+
+
     }
 }
