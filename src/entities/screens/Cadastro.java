@@ -1,11 +1,12 @@
 package entities.screens;
 import entities.Janela;
 import javax.swing.*;
+import java.util.Objects;
 
 public class Cadastro extends Janela {
 
     public Cadastro(String title, ImageIcon background) {
-        super(title, background);
+        super(title, background, true);
         this.addButton();
         setVisible(true);
     }
@@ -16,15 +17,12 @@ public class Cadastro extends Janela {
         botaoCadRest.setBorderPainted(false);
         botaoCadRest.setContentAreaFilled(false);
         botaoCadRest.setVisible(true);
+        botaoCadRest.addActionListener(e -> {
+            CadRestaurante cadRestaurante = new CadRestaurante("Cadastrar Restaurante", new ImageIcon(Objects.requireNonNull(Cadastro.class.getResource("../../Image/cadRest.png"))), true);
+            cadRestaurante.setVisible(true);
+            this.dispose();
+        });
         this.label.add(botaoCadRest);
-        label.setVisible(true);
-
-        JButton botaoCadCli = new JButton("");
-        botaoCadCli.setBounds(138, 350, 359, 66);
-        botaoCadCli.setBorderPainted(false);
-        botaoCadCli.setContentAreaFilled(false);
-        botaoCadCli.setVisible(true);
-        this.label.add(botaoCadCli);
         label.setVisible(true);
     }
 }
