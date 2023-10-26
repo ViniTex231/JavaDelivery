@@ -9,6 +9,7 @@ import java.util.Objects;
 public class Cardapio extends Janela {
 
     private Restaurante restaurante;
+    private JTextField[] quantidadeFields;
 
     public Cardapio(String title, ImageIcon background, boolean visible, Restaurante restaurante){
         super(title, background, true);
@@ -23,7 +24,9 @@ public class Cardapio extends Janela {
         menuTextArea.setBounds(50, 70, 300, 300);
 
         StringBuilder menuText = new StringBuilder("Cardápio:\n");
+
         for (Lanche lanche : restaurante.getCardapio()){
+            JTextField quantidadeField = new JTextField(5);
             menuText.append("Nome: ").append(lanche.getNome()).append(", Preço: ").append(lanche.getPreco()).append("\n");
         }
         menuTextArea.setText(menuText.toString());
@@ -37,7 +40,13 @@ public class Cardapio extends Janela {
         botao.setContentAreaFilled(false);
         botao.setVisible(true);
         botao.addActionListener(e -> {
-            AddCardapio addCardapio = new AddCardapio("Adicionar ao carrinho", new ImageIcon(Objects.requireNonNull(Cardapio.class.getResource("../../Image/carrinho.png"))), true);
+            for (int i = 0; i < quantidadeFields.length; i++){
+                String quantidadeText = quantidadeFields[i].getText();
+                if (!quantidadeText.isEmpty()){
+                    int quantidade = Integer.parseInt(quantidadeText);
+                    System.out.println(quantidade);
+                }
+            }
         });
         this.label.add(botao);
         label.setVisible(true);
